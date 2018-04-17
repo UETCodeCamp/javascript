@@ -1,24 +1,24 @@
-## Tags
+﻿## Tags
 
-  - Lu�n lu�n t? ?�ng c�c th? kh�ng c� ph?n con. eslint: [`react/self-closing-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md)
+  - Luôn luôn tự đóng các thẻ không có con. eslint: [`react/self-closing-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md)
 
     ```jsx
-    // T?
+    // tệ
     <Foo variant="stuff"></Foo>
 
-    // T?t
+    // tốt
     <Foo variant="stuff" />
     ```
 
-  - N?u component c?a b?n c?a b?n c� thu?c t�nh nhi?u d�ng, h�y ?�ng th? c?a n� tr�n 1 d�ng m?i. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
+  - Nếu component của bạn có thuộc tính nhiều dòng, hãy đóng các thẻ đó trên 1 dòng mới. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
 
     ```jsx
-    // T?
+    // tệ
     <Foo
       bar="bar"
       baz="baz" />
 
-    // T?t
+    // tốt
     <Foo
       bar="bar"
       baz="baz"
