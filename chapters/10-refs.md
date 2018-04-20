@@ -1,6 +1,6 @@
 ﻿## Refs
 
-  - Luôn sử dụng callback với ref. eslint: [`react/no-string-refs`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md)
+  - Luôn sử dụng ref callback-truyền hàm A vào hàm B và một thời điểm nào đó hàm A sẽ được hàm B gọi lại. eslint: [`react/no-string-refs`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md)
 
     ```jsx
     // tệ
