@@ -1,13 +1,15 @@
-Khai báo
+## Khai báo
 
-    Không sử dụng displayName để đặt tên cho các components.Thay vào đó, đặt tên cho component bằng tham chiếu.
-    // Không nên
+  - Không nên sử dụng `displayName` để đặt tên cho các component. Thay vào đó, đặt tên cho các components bằng tham chiếu.
+
+    ```jsx
+    // tệ
     export default React.createClass({
       displayName: 'ReservationCard',
       // stuff goes here
     });
 
-    // Nên
+    // tốt
     export default class ReservationCard extends React.Component {
     }
-
+    ```
