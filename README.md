@@ -413,20 +413,19 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
     }
     ```
 
-  Ghi chú:
-  Nên lọc các props không cần thiết khi có thể. Ngoài ra, sử dụng [prop-types-exact](https://www.npmjs.com/package/prop-types-exact) để giúp ngăn ngừa lỗi.
+  - Ghi chú: Nên lọc các props không cần thiết khi có thể. Ngoài ra, sử dụng [prop-types-exact](https://www.npmjs.com/package/prop-types-exact) để giúp ngăn ngừa lỗi.
 
     ```jsx
     // tốt
     render() {
-    const { irrelevantProp, ...relevantProps  } = this.props;
-    return <WrappedComponent {...relevantProps} />
+      const { irrelevantProp, ...relevantProps  } = this.props;
+      return <WrappedComponent {...relevantProps} />
     }
     
     // tệ
     render() {
-    const { irrelevantProp, ...relevantProps  } = this.props;
-    return <WrappedComponent {...this.props} />
+      const { irrelevantProp, ...relevantProps  } = this.props;
+      return <WrappedComponent {...this.props} />
     }
     ```
 
