@@ -379,7 +379,7 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
     ```
   
   - Hạn chế lạm dụng toán tử spread cho việc truyền props
-  >Tại sao? Vì bạn có khả năng truyền props không cần thiết xuống Components . Và với React v15.6.1 trờ lên, bạn cần [chuyển các thuộc tính hông hợp lệ của HTML sang DOM](https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html).
+  >Tại sao? Vì bạn có khả năng truyền props không cần thiết xuống Components. Và với React v15.6.1 trờ lên, bạn cần [chuyển các thuộc tính không hợp lệ của HTML sang DOM](https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html).
 
   Ngoại lệ:
 
