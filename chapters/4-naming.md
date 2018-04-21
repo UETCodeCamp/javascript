@@ -18,7 +18,7 @@
     const reservationItem = <ReservationCard />;
     ```
 
-  - **Đặt tên Component**: Sử dụng tên file trùng với tên component. Ví dụ: `ReservationCard.jsx` nên có tên tham chiếu là `ReservationCard`. Tuy nhiên, đối với các component gốc của một thu mục, hãy sử dụng `index.jsx` làm tên file và sử dụng tên thư mục làm tên component:
+  - **Đặt tên Component**: Sử dụng tên file trùng với tên component. Ví dụ: `ReservationCard.jsx` nên có tên tham chiếu là `ReservationCard`. Tuy nhiên, đối với các component gốc của một thư mục, hãy sử dụng `index.jsx` làm tên file và sử dụng tên thư mục làm tên component:
 
     ```jsx
     // tệ

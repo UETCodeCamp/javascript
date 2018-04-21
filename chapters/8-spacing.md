@@ -1,4 +1,4 @@
- ## Khoảng trắng
+## Khoảng trắng
  - Luôn luôn có duy nhất một kí tự space(khoảng trắng) trong thẻ tự đóng. eslint: [`no-multi-spaces`](https://eslint.org/docs/rules/no-multi-spaces), [`react/jsx-tag-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md)
 
     ```jsx
