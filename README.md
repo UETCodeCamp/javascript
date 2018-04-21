@@ -6,21 +6,21 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
 
 ## Mục lục
 
-  1. [Những luật cơ bản](#basic-rules)
-  1. [So sánh Class vs `React.createClass` vs stateless](#class-vs-reactcreateclass-vs-stateless)
-  1. [Mixins](#mixins)
-  1. [Đặt tên](#naming)
-  1. [Khai báo](#declaration)
-  1. [Căn chỉnh mã nguồn](#alignment)
-  1. [Dấu nháy đơn và nháy kép](#quotes)
-  1. [Khoảng trắng](#spacing)
-  1. [Props](#props)
-  1. [Refs](#refs)
-  1. [Dấu ngoặc đơn](#parentheses)
-  1. [Thẻ](#tags)
-  1. [Phương thức](#methods)
-  1. [Cách sắp xếp hàm](#ordering)
-  1. [Thuộc tính `isMounted`](#ismounted)
+  1. [Những luật cơ bản](#Những-luật-cơ-bản)
+  1. [So sánh Class vs `React.createClass` vs stateless](#So-sánh-Class-vs-`React.createClass`-vs-stateless)
+  1. [Mixins](#Mixins)
+  1. [Đặt tên](#Đặt-tên)
+  1. [Khai báo](#Khai-báo)
+  1. [Căn chỉnh mã nguồn](#Căn-chỉnh-mã-nguồn)
+  1. [Dấu nháy đơn và nháy kép](#Dấu-nháy-đơn-và-nháy-kép)
+  1. [Khoảng trắng](#Khoảng-trắng)
+  1. [Props](#Props)
+  1. [Refs](#Refs)
+  1. [Dấu ngoặc đơn](#Dấu-ngoặc-đơn)
+  1. [Thẻ](#Thẻ)
+  1. [Phương thức](#Phương-thức)
+  1. [Cách sắp xếp hàm](#Cách-sắp-xếp-hàm)
+  1. [Thuộc tính `isMounted`](#Thuộc-tính-`isMounted`)
 
 ## Những luật cơ bản
 
