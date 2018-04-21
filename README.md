@@ -2,32 +2,34 @@
 
 Bản hướng dẫn này dựa trên những chuẩn phổ biến của Javascript. Được dịch từ bản gốc [tại đây](https://github.com/airbnb/javascript/tree/master/react)
 
+Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tránh sự nhầm lẫn. Tuy nhiên bạn có thể sẽ muốn có một phiên bản thuần Việt hơn, cứ thoải mái đóng góp nhé ;) 
+
 ## Mục lục
 
   1. [Những luật cơ bản](#basic-rules)
-  1. [Class vs `React.createClass` vs stateless](#class-vs-reactcreateclass-vs-stateless)
+  1. [So sánh Class vs `React.createClass` vs stateless](#class-vs-reactcreateclass-vs-stateless)
   1. [Mixins](#mixins)
-  1. [Naming](#naming)
-  1. [Declaration](#declaration)
-  1. [Alignment](#alignment)
-  1. [Quotes](#quotes)
-  1. [Spacing](#spacing)
+  1. [Đặt tên](#naming)
+  1. [Khai báo](#declaration)
+  1. [Căn chỉnh mã nguồn](#alignment)
+  1. [Dấu nháy đơn và nháy kép](#quotes)
+  1. [Khoảng trắng](#spacing)
   1. [Props](#props)
   1. [Refs](#refs)
-  1. [Parentheses](#parentheses)
-  1. [Tags](#tags)
-  1. [Methods](#methods)
-  1. [Ordering](#ordering)
-  1. [`isMounted`](#ismounted)
+  1. [Dấu ngoặc đơn](#parentheses)
+  1. [Thẻ](#tags)
+  1. [Phương thức](#methods)
+  1. [Cách sắp xếp hàm](#ordering)
+  1. [Thuộc tính `isMounted`](#ismounted)
 
-## Basic Rules
+## Những luật cơ bản
 
   - Chỉ chứa một React Component trong 1 file.
   - Tuy nhiên, những component có khả năng sử dụng lại([Stateless Component, hoặc Pure Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions)) có thể chung một file. eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
   - Luôn luôn sử dụng cú pháp JSX.
   - Không sử dụng `React.createElement` chung với cú pháp JSX.
 
-## So sánh class, `React.createClass`, stateless
+## So sánh class vs `React.createClass` vs stateless
 
   - Nếu Component có state hoặc refs, nên sử dụng `class extends React.Component` thay vì `React.createClass`. eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md) [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
 
@@ -76,7 +78,7 @@ Bản hướng dẫn này dựa trên những chuẩn phổ biến của Javascr
 
   > Mixins tạo ra các implicit dependencies(phụ thuộc ngầm), gây ra xung đột tên và tăng độ phức tạp. Có thể thay thế mixins bằng components, higher-order components, hoặc các utility modules(gói tiện ích).
 
-## Naming
+## Đặt tên
 
   - **Phần mở rộng(extensions)**: Sử dụng phần mở rộng `.jsx` cho React Components.
   - **Tên file**: Sử dụng chuẩn PascalCase cho tên file. Ví dụ:  `ReservationCard.jsx`.
@@ -110,7 +112,7 @@ Bản hướng dẫn này dựa trên những chuẩn phổ biến của Javascr
     ```
   - **Đặt tên Higher-order Component**: Sử dụng sự kết hợp của Higher-order component và tên của component đuợc truyền như `displayName`(tên hiển thị) trên component đuợc tạo ra. Ví dụ component bậc cao `withFoo()`, khi truyền một component `Bar` sẽ tạo ra một component với `displayName` của `withFoo(Bar)`.
 
-    > Tại sao? `displayName` của component có thể đuợc sử dụng bởi những công cụ phát triển hoặc trong các thông báo lỗi, và có một giá trị mà thể hiện rõ mối quan hệ này sẽ giúp chúng hiểu rõ chuyện gì đang xảy ra.
+  > Tại sao? `displayName` của component có thể đuợc sử dụng bởi những công cụ phát triển hoặc trong các thông báo lỗi, và có một giá trị mà thể hiện rõ mối quan hệ này sẽ giúp chúng hiểu rõ chuyện gì đang xảy ra.
 
     ```jsx
     // tệ
@@ -119,17 +121,17 @@ Bản hướng dẫn này dựa trên những chuẩn phổ biến của Javascr
         return <WrappedComponent {...props} foo />;
       }
     }
-
+    
     // tốt
     export default function withFoo(WrappedComponent) {
       function WithFoo(props) {
         return <WrappedComponent {...props} foo />;
       }
-
+    
       const wrappedComponentName = WrappedComponent.displayName
         || WrappedComponent.name
         || 'Component';
-
+    
       WithFoo.displayName = `withFoo(${wrappedComponentName})`;
       return WithFoo;
     }
@@ -167,9 +169,9 @@ Bản hướng dẫn này dựa trên những chuẩn phổ biến của Javascr
     ```
     
 ## Căn chỉnh mã nguồn
-- Căn chỉnh cho cú pháp JSX. eslint: [react/jsx-closing-bracket-location](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md) [react/jsx-closing-tag-location](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-tag-location.md)
+  - Căn chỉnh cho cú pháp JSX. eslint: [react/jsx-closing-bracket-location](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md) [react/jsx-closing-tag-location](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-tag-location.md)
 
- ```jsx
+    ```jsx
     // tệ
     <Foo superLongParam="bar"
          anotherSuperLongParam="baz" />
@@ -180,7 +182,7 @@ Bản hướng dẫn này dựa trên những chuẩn phổ biến của Javascr
       anotherSuperLongParam="baz"
     />
 
-    // nếu props phù hợp trong một dòng thì giữ nó trên cùng một dòng
+    // Nếu props phù hợp trong một dòng thì giữ nó trên cùng một dòng
     <Foo bar="bar" />
 
     // Component con được thụt lề bình thường
@@ -192,39 +194,39 @@ Bản hướng dẫn này dựa trên những chuẩn phổ biến của Javascr
     </Foo>
     ```
 
-## Sử dụng dấu nháy đơn và nháy kép
-- Luôn luôn sử dụng dấu ngoặc kép (`"`) cho các thuộc tính JSX, nhưng dấu nháy đơn (`'`) cho tất cả các JS khác. Eslint: [jsx-quotes](https://eslint.org/docs/rules/jsx-quotes)
+## Dấu nháy đơn và nháy kép
+  - Luôn luôn sử dụng dấu ngoặc kép (`"`) cho các thuộc tính JSX, nhưng dấu nháy đơn (`'`) cho tất cả các JS khác. Eslint: [jsx-quotes](https://eslint.org/docs/rules/jsx-quotes)
 
-> Tại sao? Các thuộc tính HTML thông thường thường sử dụng dấu ngoặc kép thay vì đơn, vì vậy thuộc tính JSX cũng như thế.
+  > Tại sao? Vì các thuộc tính HTML thông thường thường sử dụng dấu ngoặc kép thay vì đơn, vì vậy thuộc tính JSX cũng như thế.
 
     ```jsx
     // tệ
     <Foo bar='bar' />
-
+    
     // tốt
     <Foo bar="bar" />
-
+    
     // tệ
     <Foo style={{ left: "20px" }} />
-
+    
     // tốt
     <Foo style={{ left: '20px' }} />
     ```
 
 ## Khoảng trắng
- - Luôn luôn có duy nhất một kí tự space(khoảng trắng) trong thẻ tự đóng. eslint: [`no-multi-spaces`](https://eslint.org/docs/rules/no-multi-spaces), [`react/jsx-tag-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md)
+  - Luôn luôn có duy nhất một kí tự space(khoảng trắng) trong thẻ tự đóng. eslint: [`no-multi-spaces`](https://eslint.org/docs/rules/no-multi-spaces), [`react/jsx-tag-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md)
 
     ```jsx
     // tệ
     <Foo/>
-
+    
     // rất tệ
     <Foo                 />
-
+    
     // tệ
     <Foo
-     />
-
+    />
+    
     // tốt
     <Foo />
     ```
@@ -318,63 +320,63 @@ Bản hướng dẫn này dựa trên những chuẩn phổ biến của Javascr
 
   > Tại sao ? Sự mâu thuẫn giữa phím tắt và các lệnh bàn phím được những người dùng screenreaders sử dụng làm phức tạp hóa khả năng tiếp cận.
 
-  ```jsx
-  // tệ
-  <div accessKey="h" />
-
-  // tốt
-  <div />
-  ```
+    ```jsx
+    // tệ
+    <div accessKey="h" />
+    
+    // tốt
+    <div />
+    ```
   
   - Tránh dùng chỉ số của mảng(index) cho thuộc tính `key`, nên sử dụng một unique ID(định danh duy nhất). ([why?](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318))
 
-  ```jsx
-  // tệ
-  {todos.map((todo, index) =>
+    ```jsx
+    // tệ
+    {todos.map((todo, index) =>
     <Todo
       {...todo}
       key={index}
     />
-  )}
-
-  // tốt
-  {todos.map(todo => (
+    )}
+    
+    // tốt
+    {todos.map(todo => (
     <Todo
       {...todo}
       key={todo.id}
     />
-  ))}
-  ```
+    ))}
+    ```
     
  - Luôn xác định rõ ràng các defaultProp(thuộc tính mặc định) cho tất cả non-required props(thuộc tính không bắt buộc).
 
   > Tại sao? propTypes được coi như tài liệu, và cung cấp defaultProps , nghĩa là người đọc mã nguồn của bạn không cần phải đoán quá nhiều. Ngoài ra, nó có thể bỏ qua một số kiểm tra kiểu(type checking).
   
-  ```jsx
-  // tệ
-  function SFC({ foo, bar, children }) {
+    ```jsx
+    // tệ
+    function SFC({ foo, bar, children }) {
     return <div>{foo}{bar}{children}</div>;
-  }
-  SFC.propTypes = {
+    }
+    SFC.propTypes = {
     foo: PropTypes.number.isRequired,
     bar: PropTypes.string,
     children: PropTypes.node,
-  };
-
-  // tốt
-  function SFC({ foo, bar, children }) {
+    };
+    
+    // tốt
+    function SFC({ foo, bar, children }) {
     return <div>{foo}{bar}{children}</div>;
-  }
-  SFC.propTypes = {
+    }
+    SFC.propTypes = {
     foo: PropTypes.number.isRequired,
     bar: PropTypes.string,
     children: PropTypes.node,
-  };
-  SFC.defaultProps = {
+    };
+    SFC.defaultProps = {
     bar: '',
     children: null,
-  };
-  ```
+    };
+    ```
   
   - Hạn chế lạm dụng toán tử spread cho việc truyền props
   >Tại sao? Vì bạn có khả năng truyền props không cần thiết xuống Components . Và với React v15.6.1 trờ lên, bạn cần [chuyển các thuộc tính hông hợp lệ của HTML sang DOM](https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html).
@@ -383,50 +385,50 @@ Bản hướng dẫn này dựa trên những chuẩn phổ biến của Javascr
 
   - HOCs có thể truyền thẳng props xuống và khai báo propTypes
 
-  ```jsx
-  function HOC(WrappedComponent) {
+    ```jsx
+    function HOC(WrappedComponent) {
     return class Proxy extends React.Component {
       Proxy.propTypes = {
         text: PropTypes.string,
         isLoading: PropTypes.bool
       };
-
+    
       render() {
         return <WrappedComponent {...this.props} />
       }
     }
-  }
-  ```
+    }
+    ```
 
  - Sử dụng toán tử spread đối với prop được khai báo rõ ràng. Điều này có thể đặc biệt hữu ích khi test các React component với cấu trúc beforeEach của Mocha.
 
-  ```jsx
-  export default function Foo {
+    ```jsx
+    export default function Foo {
     const props = {
       text: '',
       isPublished: false
     }
-
+    
     return (<div {...props} />);
-  }
-  ```
+    }
+    ```
 
   Ghi chú:
   Lọc các prop không cần thiết khi có thể. Ngoài ra, sử dụng [prop-types-exact](https://www.npmjs.com/package/prop-types-exact) để giúp ngăn ngừa lỗi.
 
-  ```jsx
-  // tốt
-  render() {
+    ```jsx
+    // tốt
+    render() {
     const { irrelevantProp, ...relevantProps  } = this.props;
     return <WrappedComponent {...relevantProps} />
-  }
-
-  // tệ
-  render() {
+    }
+    
+    // tệ
+    render() {
     const { irrelevantProp, ...relevantProps  } = this.props;
     return <WrappedComponent {...this.props} />
-  }
-  ```
+    }
+    ```
 
 ## Refs
 
@@ -449,7 +451,7 @@ Bản hướng dẫn này dựa trên những chuẩn phổ biến của Javascr
   - Đóng gói các thẻ JSX trong ngoặc đơn khi chúng kéo dài nhiều dòng. 
   eslint: [`react/jsx-wrap-multilines`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md)
 
-  ```jsx
+    ```jsx
     // tệ
     render() {
       return <MyComponent variant="long body" foo="bar">
@@ -471,11 +473,11 @@ Bản hướng dẫn này dựa trên những chuẩn phổ biến của Javascr
       const body = <div>hello</div>;
       return <MyComponent>{body}</MyComponent>;
     }
-  ```
+    ```
 
-## Tags
+## Thẻ
 
-  - Luôn luôn tự đóng các thẻ không có con. eslint: [`react/self-closing-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md)
+  - Luôn luôn tự đóng các thẻ(tags) không có con. eslint: [`react/self-closing-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md)
 
     ```jsx
     // tệ
@@ -590,7 +592,7 @@ Bản hướng dẫn này dựa trên những chuẩn phổ biến của Javascr
     }
     ```
 
-## Thứ tự
+## Cách sắp xếp hàm
 
   - Các hàm trong `class extends React.Component` nên được viết theo thứ tự sau:
 
