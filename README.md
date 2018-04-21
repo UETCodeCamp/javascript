@@ -7,7 +7,7 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
 ## Mục lục
 
   1. [Những luật cơ bản](#những-luật-cơ-bản)
-  1. [So sánh Class vs `React.createClass` vs stateless](#so-sánh-class-vs-`React.createClass`-vs-stateless)
+  1. [So sánh Class vs `React.createClass` vs stateless](#so-sánh-class-vs-reactcreateclass-vs-stateless)
   1. [Mixins](#mixins)
   1. [Đặt tên](#đặt-tên)
   1. [Khai báo](#khai-báo)
@@ -20,7 +20,7 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
   1. [Thẻ](#thẻ)
   1. [Phương thức](#phương-thức)
   1. [Cách sắp xếp hàm](#cách-sắp-xếp-hàm)
-  1. [Thuộc tính `isMounted`](#thuộc-tính-`isMounted`)
+  1. [Thuộc tính `isMounted`](#thuộc-tính-isMounted)
 
 ## Những luật cơ bản
 
