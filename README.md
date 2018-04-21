@@ -112,7 +112,7 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
     ```
   - **Đặt tên Higher-order Component**: Sử dụng sự kết hợp của Higher-order component và tên của component đuợc truyền như `displayName`(tên hiển thị) trên component đuợc tạo ra. Ví dụ component bậc cao `withFoo()`, khi truyền một component `Bar` sẽ tạo ra một component với `displayName` của `withFoo(Bar)`.
 
-  > Tại sao? `displayName` của component có thể đuợc sử dụng bởi những công cụ phát triển hoặc trong các thông báo lỗi, và có một giá trị mà thể hiện rõ mối quan hệ này sẽ giúp chúng hiểu rõ chuyện gì đang xảy ra.
+    > Tại sao? Vì `displayName` của component có thể đuợc sử dụng bởi những công cụ phát triển hoặc trong các thông báo lỗi, và có một giá trị mà thể hiện rõ mối quan hệ này sẽ giúp chúng hiểu rõ chuyện gì đang xảy ra.
 
     ```jsx
     // tệ
@@ -197,7 +197,7 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
 ## Dấu nháy đơn và nháy kép
   - Luôn luôn sử dụng dấu ngoặc kép (`"`) cho các thuộc tính JSX, nhưng dấu nháy đơn (`'`) cho tất cả các JS khác. Eslint: [jsx-quotes](https://eslint.org/docs/rules/jsx-quotes)
 
-  > Tại sao? Vì các thuộc tính HTML thông thường thường sử dụng dấu ngoặc kép thay vì đơn, vì vậy thuộc tính JSX cũng như thế.
+    > Tại sao? Vì các thuộc tính HTML thông thường thường sử dụng dấu ngoặc kép thay vì đơn, vì vậy thuộc tính JSX cũng như thế.
 
     ```jsx
     // tệ
@@ -242,7 +242,7 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
     ```
 
 ## Props
- - Luôn luôn sử dụng camelCase khi đặt tên prop (camelCase : viết hoa chữa cái đầu của các từ , từ đầu tiên của cụm thì viết thường)
+  - Luôn luôn sử dụng camelCase khi đặt tên prop (camelCase : viết hoa chữa cái đầu của các từ , từ đầu tiên của cụm thì viết thường)
  
     ```jsx
     // tệ
@@ -258,7 +258,7 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
     />
     ```
     
- - Bỏ giá trị của prop khi nó thực sự rõ ràng là `true`. eslint: [`react/jsx-boolean-value`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md)
+  - Bỏ giá trị của prop khi nó thực sự rõ ràng là `true`. eslint: [`react/jsx-boolean-value`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md)
 
     ```jsx
     // tệ
@@ -275,7 +275,7 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
     <Foo hidden />
     ```
     
- - Luôn luôn sử dụng prop `alt` trong thẻ `<img>`. Nếu giá trị của thẻ là NULL , `alt` có thể là một chuỗi rỗng hoặc `<img>` phải có thuộc tính `role="presentation"`. eslint: [`jsx-a11y/alt-text`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md)
+  - Luôn luôn sử dụng prop `alt` trong thẻ `<img>`. Nếu giá trị của thẻ là NULL , `alt` có thể là một chuỗi rỗng hoặc `<img>` phải có thuộc tính `role="presentation"`. eslint: [`jsx-a11y/alt-text`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md)
 
     ```jsx
     // tệ
@@ -291,7 +291,7 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
     <img src="hello.jpg" role="presentation" />
     ```
     
- - Không dùng các từ  "image", "photo", hoặc "picture" trong `<img>` `alt` props. eslint: [`jsx-a11y/img-redundant-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
+  - Không dùng các từ  "image", "photo", hoặc "picture" trong `<img>` `alt` props. eslint: [`jsx-a11y/img-redundant-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
 
     > Tại sao? Screenreaders đã tự hiểu `img` elements là image(ảnh), vì vậy không cần khai báo thông tin này trong alt
 
@@ -303,7 +303,7 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
     <img src="hello.jpg" alt="Me waving hello" />
     ```
     
- - Chỉ sử dụng [ARIA roles](https://www.w3.org/TR/wai-aria/roles#role_definitions). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md) hợp lệ, và không trừu tượng. [jsx-a11y/aria-role](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
+  - Chỉ sử dụng [ARIA roles](https://www.w3.org/TR/wai-aria/roles#role_definitions). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md) hợp lệ, và không trừu tượng. [jsx-a11y/aria-role](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
 
     ```jsx
     // tệ - không phải ARIA roles
@@ -316,9 +316,9 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
     <div role="button" />
     ```
       
- - Không dùng `accessKey` trong các elements. eslint: [`jsx-a11y/no-access-key`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md)
+  - Không dùng `accessKey` trong các elements. eslint: [`jsx-a11y/no-access-key`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md)
 
-  > Tại sao ? Sự mâu thuẫn giữa phím tắt và các lệnh bàn phím được những người dùng screenreaders sử dụng làm phức tạp hóa khả năng tiếp cận.
+    > Tại sao ? Sự mâu thuẫn giữa phím tắt và các lệnh bàn phím được những người dùng screenreaders sử dụng làm phức tạp hóa khả năng tiếp cận.
 
     ```jsx
     // tệ
@@ -348,33 +348,33 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
     ))}
     ```
     
- - Luôn xác định rõ ràng các defaultProp(thuộc tính mặc định) cho tất cả non-required props(thuộc tính không bắt buộc).
+  - Luôn xác định rõ ràng các defaultProp(thuộc tính mặc định) cho tất cả non-required props(thuộc tính không bắt buộc).
 
-  > Tại sao? propTypes được coi như tài liệu, và cung cấp defaultProps , nghĩa là người đọc mã nguồn của bạn không cần phải đoán quá nhiều. Ngoài ra, nó có thể bỏ qua một số kiểm tra kiểu(type checking).
-  
+    > Tại sao? propTypes được coi như tài liệu, và cung cấp defaultProps , nghĩa là người đọc mã nguồn của bạn không cần phải đoán quá nhiều. Ngoài ra, nó có thể bỏ qua một số kiểm tra kiểu(type checking).
+    
     ```jsx
     // tệ
     function SFC({ foo, bar, children }) {
-    return <div>{foo}{bar}{children}</div>;
+      return <div>{foo}{bar}{children}</div>;
     }
     SFC.propTypes = {
-    foo: PropTypes.number.isRequired,
-    bar: PropTypes.string,
-    children: PropTypes.node,
+      foo: PropTypes.number.isRequired,
+      bar: PropTypes.string,
+      children: PropTypes.node,
     };
     
     // tốt
     function SFC({ foo, bar, children }) {
-    return <div>{foo}{bar}{children}</div>;
+      return <div>{foo}{bar}{children}</div>;
     }
     SFC.propTypes = {
-    foo: PropTypes.number.isRequired,
-    bar: PropTypes.string,
-    children: PropTypes.node,
+      foo: PropTypes.number.isRequired,
+      bar: PropTypes.string,
+      children: PropTypes.node,
     };
     SFC.defaultProps = {
-    bar: '',
-    children: null,
+      bar: '',
+      children: null,
     };
     ```
   
@@ -400,7 +400,7 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
     }
     ```
 
- - Sử dụng toán tử spread đối với prop được khai báo rõ ràng. Điều này có thể đặc biệt hữu ích khi test các React component với cấu trúc beforeEach của Mocha.
+  - Sử dụng toán tử spread đối với prop được khai báo rõ ràng. Điều này có thể đặc biệt hữu ích khi test các React component với cấu trúc beforeEach của Mocha.
 
     ```jsx
     export default function Foo {
@@ -414,7 +414,7 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
     ```
 
   Ghi chú:
-  Lọc các prop không cần thiết khi có thể. Ngoài ra, sử dụng [prop-types-exact](https://www.npmjs.com/package/prop-types-exact) để giúp ngăn ngừa lỗi.
+  Nên lọc các props không cần thiết khi có thể. Ngoài ra, sử dụng [prop-types-exact](https://www.npmjs.com/package/prop-types-exact) để giúp ngăn ngừa lỗi.
 
     ```jsx
     // tốt
