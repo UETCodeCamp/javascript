@@ -2,7 +2,7 @@
 
 Bản hướng dẫn này dựa trên những chuẩn phổ biến của Javascript. Được dịch từ bản gốc [tại đây](https://github.com/airbnb/javascript/tree/master/react)
 
-Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tránh sự nhầm lẫn. Tuy nhiên bạn có thể sẽ muốn có một phiên bản thuần Việt hơn, cứ thoải mái đóng góp nhé ;) 
+Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tránh sự nhầm lẫn. Tuy nhiên có thể bạn sẽ thích một phiên bản thuần Việt hơn, cứ thoải mái đóng góp nhé ;) 
 
 ## Mục lục
 
