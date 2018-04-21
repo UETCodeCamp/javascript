@@ -1,7 +1,6 @@
-
 ## Phương thức
 
-  - Nên đặt các biến cục bộ trong arrow function
+  - Sử dụng arrow function để bao đóng các biến cục bộ.
 
     ```jsx
     function ItemList(props) {
@@ -16,17 +15,17 @@
         </ul>
       );
     }
-	```
+    ```
 
-  -  Các hàm bind được thực thi trong lúc render nên đặt ở trong constuctor. eslint: [`react/jsx-no-bind`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
+  - Các hàm binding được gọi trong lúc render nên đặt ở trong hàm khởi tạo(constructor). eslint: [`react/jsx-no-bind`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
 
     > Tại sao? Vì nếu bind trong hàm render thì mỗi khi render, hàm đó lại được tạo mới một lần khiến cho hiệu suất xử lí giảm.
 
     ```jsx
-    // Tệ
-    class extends React.Component {
+    // tệ
+    class MyComponent extends React.Component {
       onClickDiv() {
-        // Làm cái gì đó
+        // làm việc gì đó
       }
 
       render() {
@@ -34,8 +33,8 @@
       }
     }
 
-    // Tốt
-    class extends React.Component {
+    // tốt
+    class MyComponent extends React.Component {
       constructor(props) {
         super(props);
 
@@ -52,38 +51,38 @@
     }
     ```
 
-  - Không nên dùng dấu _ đặt trước tên các hàm nội tại của một `React Component`
+  - Không nên dùng dấu "_" đặt trước tên các hàm của Component
     > Lí do? Vì dấu gạch dước thi thoảng được dùng trong một số ngôn ngữ để biểu thị tính "private". Tuy nhiên, không giống các ngôn ngữ khác, trong JavaScript, mọi thứ đều là “public”. Cho dù bạn có cho dấu gạch dưới vào hay không nó vẫn là public, bất kể ý định của bạn. Hãy xem vấn đề  [#1024](https://github.com/airbnb/javascript/issues/1024), và [#490](https://github.com/airbnb/javascript/issues/490) để hiểu sâu hơn.
 
     ```jsx
-    // Tệ
+    // tệ
     React.createClass({
       _onClickSubmit() {
-        // Quét nhà
+        // làm việc gì đó
       },
 
-      // Nấu cơm
+      // làm việc gì đó
     });
 
-    // Tốt
+    // tốt
     class extends React.Component {
       onClickSubmit() {
-        // Quét nhà
+        // làm việc gì đó
       }
 
-      // Nấu cơm
+      // làm việc gì đó
     }
     ```
 
-  - Phải trả về một giá trị trong phương thức `render`. eslint: [`react/require-render-return`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md)
+  - Phải trả về một giá trị trong hàm `render`. eslint: [`react/require-render-return`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md)
 
     ```jsx
-    // Tệ
+    // tệ
     render() {
       (<div />);
     }
 
-    // Tốt
+    // tốt
     render() {
       return (<div />);
     }

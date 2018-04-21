@@ -1,8 +1,8 @@
 ﻿## Naming
 
-  - **Phần mở rộng**: Sử dụng phần mở rộng `.jsx` cho React components.
-  - **Tên File**: Sử dụng chuẩn PascalCase cho tên file. Ví dụ:  `ReservationCard.jsx`.
-  - **Reference Naming**: Sử dụng PascalCase cho React components và dùng camelCase cho các instance-trường hợp của chúng. eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
+  - **Phần mở rộng(extensions)**: Sử dụng phần mở rộng `.jsx` cho React Components.
+  - **Tên file**: Sử dụng chuẩn PascalCase cho tên file. Ví dụ:  `ReservationCard.jsx`.
+  - **Tên tham chiếu(Reference Naming)**: Sử dụng PascalCase cho React components và dùng camelCase cho các đối tượng(instances) của chúng. eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
 
     ```jsx
     // tệ
@@ -18,7 +18,7 @@
     const reservationItem = <ReservationCard />;
     ```
 
-  - **Đặt tên Component**: Sử dụng tên file làm tên component. Ví dụ: `ReservationCard.jsx` nên có tên tham chiếu là `ReservationCard`. Tuy nhiên, đối với các component gốc của một thu mục, hãy sử dụng `index.jsx` làm tên file và sử dụng tên thư mục làm tên component:
+  - **Đặt tên Component**: Sử dụng tên file trùng với tên component. Ví dụ: `ReservationCard.jsx` nên có tên tham chiếu là `ReservationCard`. Tuy nhiên, đối với các component gốc của một thu mục, hãy sử dụng `index.jsx` làm tên file và sử dụng tên thư mục làm tên component:
 
     ```jsx
     // tệ
@@ -30,9 +30,9 @@
     // tốt
     import Footer from './Footer';
     ```
-  - **Đặt tên Component bậc cao**: Sử dụng một hỗn hợp tên của component bậc cao và tên của component đuợc truyền như `displayName`-tên hiển thị trên component đuợc tạo ra. Ví dụ component bậc cao `withFoo()`, khi truyền một component `Bar` sẽ tạo ra một component với `displayName` của `withFoo(Bar)`.
+  - **Đặt tên Higher-order Component**: Sử dụng sự kết hợp của Higher-order component và tên của component đuợc truyền như `displayName`(tên hiển thị) trên component đuợc tạo ra. Ví dụ component bậc cao `withFoo()`, khi truyền một component `Bar` sẽ tạo ra một component với `displayName` của `withFoo(Bar)`.
 
-    > Tại sao? `displayName` của component có thể đuợc sử dụng bởi những công cụ phát triển hoặc trong các thông báo lỗi, và có một giá trị mà thể hiện rõ mối quan hệ này sẽ giúp mọi nguời hiểu rõ chuyện gì đang xảy ra.
+    > Tại sao? `displayName` của component có thể đuợc sử dụng bởi những công cụ phát triển hoặc trong các thông báo lỗi, và có một giá trị mà thể hiện rõ mối quan hệ này sẽ giúp chúng hiểu rõ chuyện gì đang xảy ra.
 
     ```jsx
     // tệ
@@ -57,10 +57,9 @@
     }
     ```
 
-  - **Đặt tên Props**: Tránh sử dụng tên thuộc tính DOM component cho mục đích khác.
+  - **Đặt tên Props**: Tránh sử dụng tên props của DOM Component cho mục đích khác.
 
-    > Tại sao? Mọi nguời mong đợi props nhu `style` và `className` có ý nghia là một điều cụ thể. Việc thay đổi API một tập con của ứng dụng 
-làm cho code khó đọc và khó bảo trì hơn, và có thể gây ra lỗi.
+    > Tại sao? Mọi nguời mong đợi props như `style` và `className` có ý nghĩa riêng. Việc thay đổi mục đích sử dụng của API gốc làm cho mã khó đọc và khó bảo trì hơn, thậm chí có thể gây ra lỗi.
 
     ```jsx
     // tệ

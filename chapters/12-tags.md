@@ -10,7 +10,7 @@
     <Foo variant="stuff" />
     ```
 
-  - Nếu component của bạn có thuộc tính nhiều dòng, hãy đóng các thẻ đó trên 1 dòng mới. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
+  - Nếu Component của bạn có thuộc tính nhiều dòng, hãy đóng thẻ đó trên 1 dòng mới. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
 
     ```jsx
     // tệ

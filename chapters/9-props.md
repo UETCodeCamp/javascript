@@ -14,7 +14,8 @@
       phoneNumber={12345678}
     />
     ```
- - Bỏ giá trị của prop khi nó thực sự rõ ràng `true`. eslint: [`react/jsx-boolean-value`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md)
+    
+ - Bỏ giá trị của prop khi nó thực sự rõ ràng là `true`. eslint: [`react/jsx-boolean-value`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md)
 
     ```jsx
     // tệ
@@ -30,7 +31,8 @@
     // tốt
     <Foo hidden />
     ```
-  - Luôn luôn sử dụng prop `alt` trong thẻ `<img>`. Nếu giá trị của thẻ là NULL , `alt` có thể là một chuỗi rỗng hoặc `<img>` phải có thuộc tính `role="presentation"`. eslint: [`jsx-a11y/alt-text`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md)
+    
+ - Luôn luôn sử dụng prop `alt` trong thẻ `<img>`. Nếu giá trị của thẻ là NULL , `alt` có thể là một chuỗi rỗng hoặc `<img>` phải có thuộc tính `role="presentation"`. eslint: [`jsx-a11y/alt-text`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md)
 
     ```jsx
     // tệ
@@ -46,9 +48,9 @@
     <img src="hello.jpg" role="presentation" />
     ```
     
-- Không dùng các từ  "image", "photo", hoặc "picture" trong `<img>` `alt` props. eslint: [`jsx-a11y/img-redundant-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
+ - Không dùng các từ  "image", "photo", hoặc "picture" trong `<img>` `alt` props. eslint: [`jsx-a11y/img-redundant-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
 
-    > Tại sao? Screenreaders đã thông báo `img` elements là , vì vậy không cần khai báo thông tin này trong alt
+    > Tại sao? Screenreaders đã tự hiểu `img` elements là image(ảnh), vì vậy không cần khai báo thông tin này trong alt
 
     ```jsx
     // tệ
@@ -58,22 +60,22 @@
     <img src="hello.jpg" alt="Me waving hello" />
     ```
     
-- Chỉ sử dụng hợp lệ, không trừu tượng [ARIA roles](https://www.w3.org/TR/wai-aria/roles#role_definitions). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
+ - Chỉ sử dụng [ARIA roles](https://www.w3.org/TR/wai-aria/roles#role_definitions). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md) hợp lệ, và không trừu tượng. [jsx-a11y/aria-role](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
 
     ```jsx
-    // tệ - không phải vai trò ARIA
+    // tệ - không phải ARIA roles
     <div role="datepicker" />
 
-    //tệ-vai trò ARIA trừu tượng
+    //tệ- ARIA roles trừu tượng
     <div role="range" />
 
     // tốt
     <div role="button" />
     ```
       
- - Không dùng `accessKey` trong elements. eslint: [`jsx-a11y/no-access-key`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md)
+ - Không dùng `accessKey` trong các elements. eslint: [`jsx-a11y/no-access-key`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md)
 
-  > Tại sao ? Sự mâu thuẫn giữa phím tắt và các lệnh bàn phím được những người dùng screenreaders sử dụng làm phức tạp hóa khả năng tiếp cận 
+  > Tại sao ? Sự mâu thuẫn giữa phím tắt và các lệnh bàn phím được những người dùng screenreaders sử dụng làm phức tạp hóa khả năng tiếp cận.
 
   ```jsx
   // tệ
@@ -83,7 +85,7 @@
   <div />
   ```
   
-   - Tránh dùng chỉ số mảng như  `key` prop, nên sử dụng một ID duy nhất. ([why?](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318))
+  - Tránh dùng chỉ số của mảng(index) cho thuộc tính `key`, nên sử dụng một unique ID(định danh duy nhất). ([why?](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318))
 
   ```jsx
   // tệ
@@ -103,9 +105,10 @@
   ))}
   ```
     
- - Luôn xác định rõ ràng các defaultProp cho tất cả non-required props.
+ - Luôn xác định rõ ràng các defaultProp(thuộc tính mặc định) cho tất cả non-required props(thuộc tính không bắt buộc).
 
-  > Tại sao? propTypes là một hình thức tài liệu, và cung cấp defaultProps , nghĩa là người đọc code của bạn không cần phải đoán code của bạn quá nhiều. Ngoài ra , nó có nghĩa là code của bản có thể bỏ quá kiểm tra kiểu.
+  > Tại sao? propTypes được coi như tài liệu, và cung cấp defaultProps , nghĩa là người đọc mã nguồn của bạn không cần phải đoán quá nhiều. Ngoài ra, nó có thể bỏ qua một số kiểm tra kiểu(type checking).
+  
   ```jsx
   // tệ
   function SFC({ foo, bar, children }) {
@@ -131,12 +134,13 @@
     children: null,
   };
   ```
-   -Hạn chế lạm dụng props
-  >Tại sao? Nếu không , bạn có khả năng truyền props không cần thiết xuống components . Và với React v15.6.1 trờ lên, bạn cần [chuyển các thuộc tính hông hợp lệ của  HTML sang DOM](https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html).
+  
+  - Hạn chế lạm dụng toán tử spread cho việc truyền props
+  >Tại sao? Vì bạn có khả năng truyền props không cần thiết xuống Components . Và với React v15.6.1 trờ lên, bạn cần [chuyển các thuộc tính hông hợp lệ của HTML sang DOM](https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html).
 
   Ngoại lệ:
 
-  - HOCs that proxy down props and hoist propTypes
+  - HOCs có thể truyền thẳng props xuống và khai báo propTypes
 
   ```jsx
   function HOC(WrappedComponent) {
@@ -153,7 +157,7 @@
   }
   ```
 
- - Truyền các đối tượng với prop rõ ràng . Điều này có thể đặc biệt hữu ích khi thử nghiệm các React component với Mocha's beforeEach construct.
+ - Sử dụng toán tử spread đối với prop được khai báo rõ ràng. Điều này có thể đặc biệt hữu ích khi test các React component với cấu trúc beforeEach của Mocha.
 
   ```jsx
   export default function Foo {
@@ -166,8 +170,8 @@
   }
   ```
 
-  Ghi chú sử dụng:
-  Lọc các prop không cần thiết khi có thể . Ngoài ra, sử dụng [prop-types-exact](https://www.npmjs.com/package/prop-types-exact) để giúp ngăn chặn lỗi .
+  Ghi chú:
+  Lọc các prop không cần thiết khi có thể. Ngoài ra, sử dụng [prop-types-exact](https://www.npmjs.com/package/prop-types-exact) để giúp ngăn ngừa lỗi.
 
   ```jsx
   // tốt

@@ -1,9 +1,9 @@
-## Class vs `React.createClass` vs stateless
+## So sánh class, `React.createClass`, stateless
 
-  - Nếu bạn có state bên trong and/or refs, nên xài `class extends React.Component` over `React.createClass`. eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md) [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
+  - Nếu Component có state hoặc refs, nên sử dụng `class extends React.Component` thay vì `React.createClass`. eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md) [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
 
     ```jsx
-    // bad
+    // tệ
     const Listing = React.createClass({
       // ...
       render() {
@@ -11,7 +11,7 @@
       }
     });
 
-    // good
+    // tốt
     class Listing extends React.Component {
       // ...
       render() {
@@ -20,22 +20,22 @@
     }
     ```
 
-    And if you don't have state or refs, prefer normal functions (not arrow functions) over classes:
+    Và nếu trong Component không có state hoặc refs, nên sử dụng khai báo hàm (không phải arrow function) thay vì class:
 
     ```jsx
-    // bad
+    // tệ
     class Listing extends React.Component {
       render() {
         return <div>{this.props.hello}</div>;
       }
     }
 
-    // bad (dựa vào tên function để suy luận thì rất đau đầu)
+    // tệ (dựa vào tên hàm để suy luận thì rất đau đầu)
     const Listing = ({ hello }) => (
       <div>{hello}</div>
     );
 
-    // good
+    // tốt
     function Listing({ hello }) {
       return <div>{hello}</div>;
     }
