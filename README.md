@@ -666,7 +666,7 @@ Những từ mang nặng tính kĩ thuật sẽ được giữ nguyên để tr�
   1. Các hàm render khác như `renderNavigation()` hay `renderProfilePicture()`
   1. `render`
 
-## `isMounted`
+## Thuộc tính `isMounted`
 
   - Không nên sử dụng `isMounted`. eslint: [`react/no-is-mounted`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md)
 
